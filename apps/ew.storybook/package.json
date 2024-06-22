@@ -8,10 +8,11 @@
     "start": "npx serve storybook-static"
   },
   "dependencies": {
+    "@repo/ui": "*",
     "next": "14.2.4",
     "react": "^18",
     "react-dom": "^18",
-    "@repo/ui": "*"
+    "serve": "^14.2.3"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.5.0",

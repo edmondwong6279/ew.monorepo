@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Button } from "@repo/ui/button";
+import { Card } from "@repo/ui/card";
 
 const meta = {
-  title: "Example/Button",
-  component: Button,
+  title: "Example/Card",
+  component: Card,
   parameters: {
     layout: "centered",
   },
   tags: ["autodocs"],
-} satisfies Meta<typeof Button>;
+} satisfies Meta<typeof Card>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -16,13 +16,15 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     children: <>Primary Story</>,
-    appName: "Storybook",
+    title: "Storybook",
+    href: "#",
   },
 };
 
 export const Secondary: Story = {
   args: {
     children: <>Secondary Story</>,
-    appName: "Storybook",
+    title: "Storybook",
+    href: "#",
   },
 };
