@@ -22,8 +22,9 @@ const config: Omit<Config, "content"> = {
         sm: "0.875rem",
         base: "1rem",
         xl: "1.25rem",
-        "2xl": "1.5rem",
-        "3xl": "10rem",
+        "3xl": "5rem",
+        "4xl": "8rem",
+        "5xl": "10rem",
       },
       lineHeight: {
         "3xl": "8rem",
