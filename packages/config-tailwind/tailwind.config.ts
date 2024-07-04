@@ -27,11 +27,15 @@ const config: Omit<Config, "content"> = {
         "5xl": "10rem",
       },
       lineHeight: {
-        "3xl": "8rem",
+        "3xl": "10rem",
       },
       backgroundImage: {
         noise:
           "url('https://res.cloudinary.com/dtawgkgnl/image/upload/portfolio/images/noise_u27g39.png')",
+      },
+      backgroundPosition: {
+        start: "100%",
+        end: "0 100%",
       },
       animation: {
         "spin-slow":
