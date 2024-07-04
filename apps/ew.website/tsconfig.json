@@ -1,7 +1,17 @@
 {
   "extends": "@repo/typescript-config/nextjs.json",
   "compilerOptions": {
-    "plugins": [{ "name": "next" }]
+    "plugins": [{ "name": "next" }],
+    "paths": {
+      "@/*": ["./*"],
+      "@/components/*": ["./app/_components/*"],
+      "@/constants": ["./app/_constants"],
+      "@/context": ["./app/_context"],
+      "@/hooks": ["./app/_hooks"],
+      "@/styles/*": ["./app/_styles/*"],
+      "@/types": ["./app/_types"],
+      "@/utils": ["./app/_utils"]
+    }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]

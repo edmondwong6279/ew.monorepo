@@ -5,6 +5,7 @@
       "dependsOn": [
         "^build"
       ],
+      "env": ["NEXT_PUBLIC_STRAPI_API_URL", "CMS_KEY"],
       "inputs": [
         "$TURBO_DEFAULT$",
         ".env*"
@@ -16,6 +17,7 @@
       ]
     },
     "lint": {},
+    "lint:fix": {},
     "type-check": {},
     "dev": {
       "cache": false,

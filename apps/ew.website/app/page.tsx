@@ -1,7 +1,10 @@
-export default function Home() {
+import LandingPageHeader from "@/components/LandingPageHeader";
+
+export default function Home(): JSX.Element {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1 className="text-white">Landing Page</h1>
-    </main>
+    <>
+      <LandingPageHeader supertitle="My name is" title="Ed Wong" />
+      <LandingPageHeader supertitle="I am a" title="Full Stack Dev" />
+    </>
   );
 }
