@@ -40,8 +40,14 @@ const config: Omit<Config, "content"> = {
       animation: {
         "spin-slow":
           "spin 6.5s ease-in-out infinite, blur-pulse 4.5s ease-in-out infinite",
+        "bg-spin": "bg-spin 3s ease-in-out infinite",
       },
       keyframes: {
+        "bg-spin": {
+          "0%": { "background-position": "100%" },
+          "50%": { "background-position": "0 100%" },
+          "100%": { "background-position": "100%" },
+        },
         spin: {
           "0%": { transform: "rotate(0deg)" },
           "50%": { transform: "rotate(170deg)" },

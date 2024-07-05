@@ -1,7 +1,12 @@
 import LandingPageHeader from "@/components/LandingPageHeader";
 import { CTA } from "@repo/ui/cta";
+import { getData } from "@/utils";
 
-export default function Home(): JSX.Element {
+export default async function Home(): Promise<JSX.Element> {
+  const result = await getData("home-page?populate=deep");
+
+  console.log(result);
+
   return (
     <>
       <header className="relative flex flex-col h-[calc(100svh-4rem)] justify-center md:pb-8 mb-7">
@@ -16,13 +21,7 @@ export default function Home(): JSX.Element {
         </div>
       </header>
       <section id="more-info">
-        <div>
-          <p className="h-64">Some stuff about some stuff</p>
-          <p className="h-64">Some stuff about some stuff</p>
-          <p className="h-64">Some stuff about some stuff</p>
-          <p className="h-64">Some stuff about some stuff</p>
-          <p className="h-64">Some stuff about some stuff</p>
-        </div>
+        <div>{JSON.stringify(result)}</div>
       </section>
     </>
   );
