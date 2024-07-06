@@ -3,8 +3,8 @@ import { Roboto_Condensed } from "next/font/google";
 
 // TODO FOR DEV
 import _sharedConfig from "../../../packages/config-tailwind/tailwind.config";
-import "./globals.css";
 import "@repo/ui/styles.css";
+import "./globals.css";
 import NavBar from "@/components/NavBar";
 
 const font = Roboto_Condensed({ subsets: ["latin"] });
@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${font.className} min-h-screen flex flex-col items-center relative bg-gray bg-noise`}
+        className={`${font.className} min-h-screen flex flex-col items-center relative bg-gray bg-noise text-off-white`}
       >
         <NavBar
           navItems={[

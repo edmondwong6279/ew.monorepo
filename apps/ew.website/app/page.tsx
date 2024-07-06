@@ -1,11 +1,16 @@
-import LandingPageHeader from "@/components/LandingPageHeader";
+import Image from "next/image";
+import ReactMarkdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
+
 import { CTA } from "@repo/ui/cta";
+import { Card } from "@repo/ui/card";
+
 import { getData } from "@/utils";
 
-export default async function Home(): Promise<JSX.Element> {
-  const result = await getData("home-page?populate=deep");
+import LandingPageHeader from "@/components/LandingPageHeader";
 
-  console.log(result);
+export default async function Home(): Promise<JSX.Element> {
+  const { attributes } = await getData("home-page?populate=deep");
 
   return (
     <>
@@ -21,7 +26,58 @@ export default async function Home(): Promise<JSX.Element> {
         </div>
       </header>
       <section id="more-info">
-        <div>{JSON.stringify(result)}</div>
+        <div className="my-10 text-center">
+          <p className="text-2xl italic">{attributes.tagline}</p>
+        </div>
+        <div className="my-10">
+          <Card className="p-0 flex">
+            <div className="p-5">
+              <ReactMarkdown rehypePlugins={[rehypeRaw]}>
+                {attributes.description}
+              </ReactMarkdown>
+              <ul>
+                {attributes.contactItems.map((item, idx) => (
+                  <li key={idx}>
+                    {item.name} {item.link}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <Image
+              src={attributes.mediaUrl}
+              alt={"Image of Ed"}
+              width={0}
+              height={0}
+              sizes="(max-width: 768px) 300px, 400px"
+              className="w-1/3"
+            />
+          </Card>
+        </div>
+
+        <div className="my-10">
+          <Card className="p-0 flex">
+            <div className="p-5">
+              <ReactMarkdown rehypePlugins={[rehypeRaw]}>
+                {attributes.description}
+              </ReactMarkdown>
+              <ul>
+                {attributes.contactItems.map((item, idx) => (
+                  <li key={idx}>
+                    {item.name} {item.link}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <Image
+              src={attributes.mediaUrl}
+              alt={"Image of Ed"}
+              width={0}
+              height={0}
+              sizes="(max-width: 768px) 300px, 400px"
+              className="w-1/3"
+            />
+          </Card>
+        </div>
       </section>
     </>
   );
