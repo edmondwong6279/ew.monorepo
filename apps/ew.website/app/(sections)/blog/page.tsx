@@ -1,5 +1,6 @@
-import { getData } from "@/utils";
 import Link from "next/link";
+
+import { getData } from "@/utils";
 
 export default async function Blog() {
   const [
