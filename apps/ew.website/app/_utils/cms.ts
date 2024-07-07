@@ -22,7 +22,7 @@ import type { AllInputTypes, PossibleInputTypes } from "@/types";
  */
 
 export const getData = async <T extends AllInputTypes>(
-  searchString: T,
+  searchString: T
 ): Promise<PossibleInputTypes<T>> => {
   const requestUrl = `${
     process.env.NEXT_PUBLIC_STRAPI_API_URL || "http://127.0.0.1:1337"
@@ -33,6 +33,7 @@ export const getData = async <T extends AllInputTypes>(
       "Content-Type": "application/json",
       Authorization: `Bearer ${process.env.CMS_KEY}`,
     },
+    // TODO - add cache control endpoint for strapi to invalidate the cache
     next: { revalidate: 300 }, // 5 minute cache
   });
 

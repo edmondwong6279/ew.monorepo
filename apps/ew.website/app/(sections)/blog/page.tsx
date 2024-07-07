@@ -1,7 +1,30 @@
-export default function Blog() {
+import { getData } from "@/utils";
+import Link from "next/link";
+
+export default async function Blog() {
+  const [
+    {
+      attributes: { title, description },
+    },
+    blogs,
+  ] = await Promise.all([
+    getData("blog-page?populate=deep"),
+    getData("blogs?sort[0]=postDate:desc&populate=deep"),
+  ]);
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1>Blog</h1>
+    <main className="flex min-h-[calc(100svh-4.5rem)] flex-col items-center justify-between p-24">
+      <h1>{title}</h1>
+      <p>{description}</p>
+      <ul>
+        {blogs.map((blog, idx) => (
+          <li key={idx}>
+            <Link href={`/blog/${blog.attributes.slug}`}>
+              {blog.attributes.title}
+            </Link>
+          </li>
+        ))}
+      </ul>
     </main>
   );
 }
