@@ -5,7 +5,10 @@
       "dependsOn": [
         "^build"
       ],
-      "env": ["NEXT_PUBLIC_STRAPI_API_URL", "CMS_KEY"],
+      "env": [
+        "NEXT_PUBLIC_STRAPI_API_URL",
+        "CMS_KEY"
+      ],
       "inputs": [
         "$TURBO_DEFAULT$",
         ".env*"
@@ -13,7 +16,8 @@
       "outputs": [
         "dist/**",
         ".next/**",
-        "!.next/cache/**"
+        "!.next/cache/**",
+        "storybook-static/**"
       ]
     },
     "lint": {},
