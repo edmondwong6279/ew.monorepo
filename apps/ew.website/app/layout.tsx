@@ -6,6 +6,7 @@ import _sharedConfig from "../../../packages/config-tailwind/tailwind.config";
 import "@repo/ui/styles.css";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
 
 const font = Roboto_Condensed({ subsets: ["latin"] });
 
@@ -33,9 +34,10 @@ export default function RootLayout({
             { title: "Blog", link: "/blog" },
           ]}
         />
-        <main className="max-w-screen-xl flex flex-col items-center">
+        <main className="max-w-screen-xl flex flex-col items-center mx-2">
           {children}
         </main>
+        <Footer />
         {/* The below is for the blurry blob background */}
         <div className="absolute z-[-20] w-full h-full bg-gradient-to-b from-[rgba(239, 218, 218, 0.1)] via-[rgba(237, 237, 237, 0.1)] to-[rgba(135, 135, 135, 0.1)] backdrop-blur-[40px] opacity-50 pointer-events-none" />
         <div className="absolute h-full w-full pointer-events-none">
