@@ -2,27 +2,26 @@ import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 
 import { CTA } from "@repo/ui/cta";
-import { Card } from "@repo/ui/card";
 
 import { getData } from "@/utils";
 
 import LandingPageHeader from "@/components/LandingPageHeader";
-import CustomCard from "./_components/CustomCard";
+import CustomCard from "@/components/CustomCard";
 
 export default async function Home(): Promise<JSX.Element> {
   const { attributes } = await getData("home-page?populate=deep");
 
   return (
     <>
-      <header className="relative flex flex-col min-h-[calc(100svh-4rem)] justify-center md:pb-8 mb-7">
+      <header className="relative flex flex-col min-h-[calc(100svh-4rem)] justify-center md:pb-8">
         <LandingPageHeader supertitle="My name is" title="Ed Wong" />
         <LandingPageHeader supertitle="I am a" title="Full Stack Dev" />
         <div className="max-w-60 self-center">
           <CTA href="#more-info">Continue</CTA>
         </div>
       </header>
-      <section id="more-info">
-        <div className="my-10 text-center">
+      <section className="pt-[88px]" id="more-info">
+        <div className="my-4 text-center">
           <p className="text-2xl italic">{attributes.tagline}</p>
         </div>
         <div className="my-10">

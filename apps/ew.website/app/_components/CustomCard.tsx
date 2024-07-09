@@ -12,7 +12,7 @@ export default function CustomCard({
 }) {
   return (
     <Card className="p-0 flex flex-col sm:flex-row">
-      <div className="p-5 flex flex-col items-start justify-evenly  sm:w-2/3">
+      <div className="p-5 flex flex-col items-start justify-evenly sm:w-2/3">
         {children}
       </div>
       {image && (
