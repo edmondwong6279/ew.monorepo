@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto_Condensed } from "next/font/google";
 
-// TODO FOR DEV
-import _sharedConfig from "../../../packages/config-tailwind/tailwind.config";
+// TODO remove the ui package tailwind
 import "@repo/ui/styles.css";
 import "./globals.css";
 import NavBar from "@/components/NavBar";

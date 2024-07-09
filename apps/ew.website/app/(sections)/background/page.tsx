@@ -6,19 +6,21 @@ import { getData } from "@/utils";
 
 export default async function Background() {
   const {
-    attributes: { title, description, aboutGroups },
+    attributes: { description, aboutGroups },
   } = await getData("about-page?populate=deep");
 
   return (
-    <section className="flex  min-h-[calc(100svh-4.5rem)] flex-col items-center justify-between">
-      <h1>{title}</h1>
-      <p>{description}</p>
-      <ul className="flex flex-col gap-5">
+    <div className="flex min-h-[calc(100svh-4.5rem)] flex-col items-center justify-between">
+      {/* <h2 className="my-12 self-start text-xl">{title}</h2> */}
+      <p className="my-12 self-start">{description}</p>
+      <div className="flex flex-col gap-5">
         {aboutGroups.map((group, idx) => (
-          <li key={idx}>
-            <h2>{group.groupTitle}</h2>
+          <section key={idx}>
+            <h2 className="text-2xl md:text-3xl leading-8 md:leading-3xl self-start">
+              {group.groupTitle}
+            </h2>
             {group.aboutItems.map((item, idx) => (
-              <div key={idx} className="my-5">
+              <div key={idx} className="my-5 list-disc">
                 <CustomCard
                   image={
                     item.mediaUrl
@@ -26,17 +28,22 @@ export default async function Background() {
                       : undefined
                   }
                 >
-                  <h3>{item.title}</h3>
-                  <p>{item.subtitle}</p>
-                  <ReactMarkdown rehypePlugins={[rehypeRaw]}>
+                  <header className="mb-4">
+                    <h3 className="text-2xl">{item.title}</h3>
+                    <h4 className="text-sm text-gray-1">{item.subtitle}</h4>
+                  </header>
+                  <ReactMarkdown
+                    className="list-disc"
+                    rehypePlugins={[rehypeRaw]}
+                  >
                     {item.description}
                   </ReactMarkdown>
                 </CustomCard>
               </div>
             ))}
-          </li>
+          </section>
         ))}
-      </ul>
-    </section>
+      </div>
+    </div>
   );
 }

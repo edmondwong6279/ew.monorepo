@@ -33,7 +33,7 @@ export default async function Home(): Promise<JSX.Element> {
               <br />
               <p>Contact details and links:</p>
               <br />
-              <ul className="ml-8 list-disc">
+              <ul>
                 {attributes.contactItems.map((item, idx) => (
                   <li key={idx}>
                     <a href={item.link} target="_blank">

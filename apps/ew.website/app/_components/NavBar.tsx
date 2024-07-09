@@ -85,10 +85,10 @@ export default function NavBar({
           />
         </div>
       ) : null}
-      <ul
+      <ol
         className={`justify-between flex flex-col md:flex-row items-center w-full max-w-screen-xl transition-all ${viewIsMobile && (mobileMenuIsOpen ? "flex flex-col min-h-screen my-5" : "opacity-0 max-h-0 overflow-hidden")}`}
       >
-        {/* <ul
+        {/* <ol
         className={`justify-between md:flex w-full max-w-screen-xl min-h-fit transition-all`}
       > */}
         {navItems.map(({ link, title }, idx) => (
@@ -102,7 +102,7 @@ export default function NavBar({
             </Link>
           </li>
         ))}
-      </ul>
+      </ol>
     </nav>
   ) : (
     <></>
