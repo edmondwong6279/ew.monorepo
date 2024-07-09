@@ -11,6 +11,8 @@ const config: Omit<Config, "content"> = {
         gray: "#212121",
         "gray-1": "#878787",
         "off-white": "#ededed",
+        "off-white-translucent": "rgba(237,237,237,0.3)",
+        "off-white-translucent-2": "rgba(250,250,250,0.5)",
         "pink-1": "#efdada",
         "pink-2": "#f77373",
         "purple-1": "#a193f5",
@@ -27,12 +29,21 @@ const config: Omit<Config, "content"> = {
         "5xl": "10rem",
       },
       lineHeight: {
-        "3xl": "10rem",
+        sm: "0.875rem",
+        base: "1rem",
+        xl: "1.25rem",
+        "3xl": "5rem",
+        "4xl": "8rem",
+        "5xl": "10rem",
       },
       backgroundImage: {
         noise:
           "url('https://res.cloudinary.com/dtawgkgnl/image/upload/portfolio/images/noise_u27g39.png')",
       },
+      dropShadow: {
+        "3xl": "0px 4px 4px rgba(0, 0, 0, 0.25)",
+      },
+
       backgroundPosition: {
         start: "100%",
         end: "0 100%",
@@ -40,6 +51,7 @@ const config: Omit<Config, "content"> = {
       animation: {
         "spin-slow":
           "spin 6.5s ease-in-out infinite, blur-pulse 4.5s ease-in-out infinite",
+        "spin-medium": "spin 2s linear infinite",
         "bg-spin": "bg-spin 3s ease-in-out infinite",
       },
       keyframes: {

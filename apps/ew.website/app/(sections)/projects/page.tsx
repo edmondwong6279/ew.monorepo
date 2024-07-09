@@ -6,7 +6,7 @@ export default async function Projects() {
   } = await getData("portfolio-page?populate=deep");
 
   return (
-    <main className="flex  min-h-[calc(100svh-4.5rem)](100svh-4rem)] flex-col items-center justify-between p-24">
+    <section className="flex min-h-[calc(100svh-4rem)] flex-col items-center justify-between p-24">
       <h1>{title}</h1>
       <p>{description}</p>
       <ul>
@@ -14,6 +14,6 @@ export default async function Projects() {
           <li key={idx}>{item.title}</li>
         ))}
       </ul>
-    </main>
+    </section>
   );
 }

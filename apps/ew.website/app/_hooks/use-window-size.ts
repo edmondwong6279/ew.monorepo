@@ -3,9 +3,12 @@ import { useState, useEffect, useRef } from "react";
 import type { Dims } from "@/types";
 
 export const useWindowSize = () => {
-  const [windowSize, setWindowSize] = useState({
-    width: Infinity,
-    height: Infinity,
+  const [windowSize, setWindowSize] = useState<{
+    width: undefined | number;
+    height: undefined | number;
+  }>({
+    width: undefined,
+    height: undefined,
   });
 
   useEffect(() => {
