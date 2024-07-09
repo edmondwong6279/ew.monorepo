@@ -22,7 +22,7 @@ export default function NavBar({
   const { theme } = useContext(ThemeContext);
 
   const [viewIsMobile, setviewIsMobile] = useState(
-    size.width ? size.width < mdBreakpoint : false,
+    size.width ? size.width < mdBreakpoint : false
   );
 
   useEffect(() => {
@@ -62,7 +62,7 @@ export default function NavBar({
 
   const activeNavItem = useMemo(() => {
     return navItems.filter(({ link }) =>
-      link !== "/" ? path.startsWith(link) : path === link,
+      link !== "/" ? path.startsWith(link) : path === link
     )[0];
   }, [navItems, path]);
 
@@ -86,11 +86,8 @@ export default function NavBar({
         </div>
       ) : null}
       <ol
-        className={`justify-between flex flex-col md:flex-row items-center w-full max-w-screen-xl transition-all ${viewIsMobile && (mobileMenuIsOpen ? "flex flex-col min-h-screen my-5" : "opacity-0 max-h-0 overflow-hidden")}`}
+        className={`justify-between flex flex-col md:flex-row items-center w-full max-w-screen-xl transition-all ${viewIsMobile && (mobileMenuIsOpen ? "h-[calc(100svh-3rem)] flex-col justify-between" : "opacity-0 max-h-0 overflow-hidden")}`}
       >
-        {/* <ol
-        className={`justify-between md:flex w-full max-w-screen-xl min-h-fit transition-all`}
-      > */}
         {navItems.map(({ link, title }, idx) => (
           <li className="relative" key={`${idx}`}>
             <Link
