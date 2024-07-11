@@ -101,6 +101,8 @@ export async function send({
   email: string;
   message: string;
 }) {
+  console.log("Trying to send form");
+
   try {
     // send email via nodemailer
     const mailOptions: Mail.Options = {
@@ -110,6 +112,8 @@ export async function send({
       subject: `Message from ${name} (${email})`,
       text: message.toString(),
     };
+
+    console.log("Created mail options", mailOptions);
 
     await transport.sendMail(mailOptions);
     console.log("successfully sent email");
