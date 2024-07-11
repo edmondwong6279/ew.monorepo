@@ -55,8 +55,8 @@ export const createMessage = async (_prev: any, formData: FormData) => {
     };
   }
 
-  // start trying to send without waiting to update the frontend faster
-  void send({ ...validatedFields.data });
+  // vercel closes this so we need to await
+  await send({ ...validatedFields.data });
 
   return {
     isSuccess: true,
