@@ -42,6 +42,7 @@ const config: Omit<Config, "content"> = {
       },
       dropShadow: {
         "3xl": "0px 4px 4px rgba(0, 0, 0, 0.25)",
+        red: "0px 0px 10px rgba(255, 0, 0, 1)",
       },
 
       backgroundPosition: {
