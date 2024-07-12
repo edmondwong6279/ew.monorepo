@@ -1,36 +1,8 @@
 "use server";
 
-import { z } from "zod";
 import nodemailer from "nodemailer";
 import Mail from "nodemailer/lib/mailer";
-
-const schema = z.object({
-  name: z
-    .string({
-      invalid_type_error: "Invalid Name",
-      required_error: "Please provide your name",
-    })
-    .min(1, {
-      message: "Please provide your name",
-    }),
-  email: z
-    .string({
-      invalid_type_error: "Invalid Email",
-      required_error: "Please provide your email",
-    })
-    .min(1, {
-      message: "Please provide your email",
-    }),
-
-  message: z
-    .string({
-      invalid_type_error: "Invalid Message",
-      required_error: "Please provide your message",
-    })
-    .min(1, {
-      message: "Please provide your message",
-    }),
-});
+import { contactSchema, sleep } from "@/utils";
 
 export const createMessage = async (_prev: any, formData: FormData) => {
   console.log("Received contact me form submission");
@@ -41,7 +13,7 @@ export const createMessage = async (_prev: any, formData: FormData) => {
     message: formData.get("message"),
   };
 
-  const validatedFields = schema.safeParse({
+  const validatedFields = contactSchema.safeParse({
     name: rawFormData.name,
     email: rawFormData.email,
     message: rawFormData.message,

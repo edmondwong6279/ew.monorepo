@@ -4,6 +4,7 @@ import { CTA } from "@repo/ui/cta-button";
 import { useEffect, useRef, useState } from "react";
 import { createMessage } from "@/utils";
 import { useFormState } from "react-dom";
+import { SubmitButton } from "./SubmitButton";
 
 const initialState = {
   errors: {
@@ -71,6 +72,8 @@ export default function Contact() {
               <label className="flex flex-col w-full">
                 Name
                 <input
+                  required
+                  minLength={1}
                   name="name"
                   className={`bg-gray-1 p-3 rounded-md outline-none transition-shadow ${name !== undefined ? "drop-shadow-red" : "drop-shadow-none"}`}
                 />
@@ -78,6 +81,8 @@ export default function Contact() {
               <label className="flex flex-col">
                 Contact Email
                 <input
+                  required
+                  minLength={1}
                   name="email"
                   type="email"
                   className={`bg-gray-1 p-3 rounded-md outline-none transition-shadow ${email !== undefined ? "drop-shadow-red" : "drop-shadow-none"}`}
@@ -87,6 +92,8 @@ export default function Contact() {
             <label className="flex flex-col w-full">
               Message
               <textarea
+                required
+                minLength={1}
                 placeholder={quotes[Math.floor(quotes.length * Math.random())]}
                 name="message"
                 className={`bg-gray-1 p-3 rounded-md h-52 outline-none transition-shadow ${message !== undefined ? "drop-shadow-red" : "drop-shadow-none"}`}
@@ -101,7 +108,7 @@ export default function Contact() {
                 </p>
               )}
             </div>
-            <CTA props={{ type: "submit" }}>Submit</CTA>
+            <SubmitButton />
           </form>
         ) : (
           <div className="flex flex-col justify-center items-center gap-4">
