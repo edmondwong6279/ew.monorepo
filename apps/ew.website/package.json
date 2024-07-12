@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@repo/ui": "*",
+    "framer-motion": "^11.3.2",
     "hamburger-react": "^2.5.1",
     "next": "^14.2.4",
     "nodemailer": "^6.9.14",

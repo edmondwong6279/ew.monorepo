@@ -27,6 +27,12 @@ export default function Contact() {
   const modalRef = useRef<HTMLDialogElement>(null);
   const [showForm, setShowForm] = useState(true);
 
+  const [quote, setQuote] = useState<string>("");
+
+  useEffect(() => {
+    setQuote(quotes[Math.floor(quotes.length * Math.random())]);
+  }, []);
+
   const [
     {
       errors: { name, email, message },
@@ -94,7 +100,7 @@ export default function Contact() {
               <textarea
                 required
                 minLength={1}
-                placeholder={quotes[Math.floor(quotes.length * Math.random())]}
+                placeholder={quote}
                 name="message"
                 className={`bg-gray-1 p-3 rounded-md h-52 outline-none transition-shadow ${message !== undefined ? "drop-shadow-red" : "drop-shadow-none"}`}
               ></textarea>

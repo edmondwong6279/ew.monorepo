@@ -1,5 +1,8 @@
 import { getData } from "@/utils";
+import { Card } from "@repo/ui/card";
 import { notFound } from "next/navigation";
+import ReactMarkdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
 
 export default async function BlobPage({
   params,
@@ -19,11 +22,13 @@ export default async function BlobPage({
   } = blogResult[0];
 
   return (
-    <section className="flex  min-h-[calc(100svh-4.5rem)] flex-col items-center justify-between p-24">
+    <section className="flex  min-h-[calc(100svh-4.5rem)] flex-col items-center justify-between">
       <h1>Blog Page</h1>
       <h1>{title}</h1>
       <time dateTime={postDate}>{postDate}</time>
-      <p>{content}</p>
+      <Card className="flex flex-col gap-2">
+        <ReactMarkdown rehypePlugins={[rehypeRaw]}>{content}</ReactMarkdown>
+      </Card>
     </section>
   );
 }

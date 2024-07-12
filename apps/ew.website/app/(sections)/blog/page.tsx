@@ -14,7 +14,7 @@ export default async function Blog() {
   ]);
 
   return (
-    <section className="flex min-h-[calc(100svh-4.5rem)] flex-col items-center justify-between p-24">
+    <section className="flex min-h-[calc(100svh-4.5rem)] flex-col items-center justify-between">
       <h1>{title}</h1>
       <p>{description}</p>
       <ul>
