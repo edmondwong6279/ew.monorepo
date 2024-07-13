@@ -1,21 +1,21 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { CTA } from "@repo/ui/cta";
+import { CTA as CTAAnchor } from "@repo/ui/cta-anchor";
 
 const meta = {
-  title: "Example/CTA",
-  component: CTA,
+  title: "Example/CTAAnchor",
+  component: CTAAnchor,
   parameters: {
     layout: "centered",
   },
   tags: ["autodocs"],
-} satisfies Meta<typeof CTA>;
+} satisfies Meta<typeof CTAAnchor>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    children: <>CTA</>,
+    children: <>CTAAnchor</>,
     href: "#",
     props: {
       target: "_blank",

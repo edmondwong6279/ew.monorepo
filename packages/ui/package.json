@@ -10,7 +10,8 @@
   "exports": {
     "./styles.css": "./dist/index.css",
     "./card": "./src/card.tsx",
-    "./cta": "./src/cta.tsx",
+    "./cta-button": "./src/cta-button.tsx",
+    "./cta-anchor": "./src/cta-anchor.tsx",
     "./loading": "./src/loading.tsx"
   },
   "license": "MIT",

@@ -1,7 +1,7 @@
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 
-import { CTA } from "@repo/ui/cta";
+import { CTA } from "@repo/ui/cta-anchor";
 
 import { getData } from "@/utils";
 

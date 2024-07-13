@@ -13,7 +13,7 @@ export default function CustomCard({
   return (
     <Card className="p-0 flex flex-col sm:flex-row">
       <div
-        className={`p-5 flex flex-col items-start justify-evenly ${image ? "sm:w-2/3" : "w-full"}`}
+        className={`p-5 flex flex-col items-start justify-start gap-4 ${image ? "sm:w-2/3" : "w-full"}`}
       >
         {children}
       </div>

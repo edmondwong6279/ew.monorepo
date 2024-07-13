@@ -2,17 +2,14 @@
   "$schema": "https://turbo.build/schema.json",
   "tasks": {
     "build": {
-      "dependsOn": [
-        "^build"
-      ],
+      "dependsOn": ["^build"],
       "env": [
         "NEXT_PUBLIC_STRAPI_API_URL",
-        "CMS_KEY"
+        "CMS_KEY",
+        "MY_EMAIL",
+        "MY_PASSWORD"
       ],
-      "inputs": [
-        "$TURBO_DEFAULT$",
-        ".env*"
-      ],
+      "inputs": ["$TURBO_DEFAULT$", ".env*"],
       "outputs": [
         "dist/**",
         ".next/**",
