@@ -11,7 +11,6 @@ export default async function Background() {
 
   return (
     <div className="flex min-h-[calc(100svh-4.5rem)] flex-col items-center justify-between">
-      {/* <h2 className="my-12 self-start text-xl">{title}</h2> */}
       <p className="my-12 self-start">{description}</p>
       <div className="flex flex-col gap-5">
         {aboutGroups.map((group, idx) => (
