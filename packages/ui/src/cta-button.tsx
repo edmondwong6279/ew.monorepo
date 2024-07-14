@@ -23,7 +23,7 @@ export function CTA({
         {children}
       </div>
       <div className="ui-pointer-events-none ui-rounded-lg ui-overflow-hidden ui-absolute ui-left-0 ui-top-0 ui-w-full ui-h-full ui-bg-off-white-translucent-2 group-hover:ui-bg-transparent ui-transition-all">
-        <div className="ui-absolute ui-rounded-full ui-bg-gradient-to-b ui-from-[#ee6565] ui-to-[#5943e7] -ui-z-20 ui-animate-spin-medium ui-w-[200%] ui-aspect-square -ui-left-1/2 -ui-top-1/2 ui-blur-md" />
+        <div className="ui-absolute ui-bg-gradient-to-b ui-from-[#ee6565] ui-to-[#5943e7] -ui-z-20 ui-left-0 ui-right-0 ui-top-0 ui-bottom-0 ui-m-auto ui-animate-spin-medium ui-aspect-square" />
       </div>
     </button>
   );

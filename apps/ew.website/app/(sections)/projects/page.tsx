@@ -10,7 +10,7 @@ export default async function Projects() {
   } = await getData("portfolio-page?populate=deep");
 
   return (
-    <section className="flex min-h-[calc(100svh-4rem)] flex-col items-center justify-between">
+    <section className="flex min-h-[calc(100svh-13.5rem)] flex-col items-center justify-between">
       <p className="my-12 self-start">{description}</p>
       <section className="flex flex-col gap-5">
         {portfolioItems.map((item, idx) => (
@@ -31,17 +31,21 @@ export default async function Projects() {
                 {(item.repositoryUrl || item.projectUrl) && (
                   <div className="w-full flex justify-center gap-4 flex-col sm:flex-row">
                     {item.repositoryUrl && (
-                      <CTA href={item.repositoryUrl}>Code Repo</CTA>
+                      <CTA newTab href={item.repositoryUrl}>
+                        Code Repo
+                      </CTA>
                     )}
                     {item.projectUrl && (
-                      <CTA href={item.projectUrl}>Project</CTA>
+                      <CTA newTab href={item.projectUrl}>
+                        Project
+                      </CTA>
                     )}
                   </div>
                 )}
               </div>
               <div className="sm:max-w-[400px]">
                 <video
-                  className="w-full h-full"
+                  className="w-full h-full object-cover"
                   muted
                   playsInline
                   autoPlay
