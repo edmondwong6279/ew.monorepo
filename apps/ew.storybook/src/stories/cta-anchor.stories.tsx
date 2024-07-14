@@ -21,4 +21,11 @@ export const Primary: Story = {
       target: "_blank",
     },
   },
+  render: ({ children, href, props }) => (
+    <div style={{ width: "100%" }}>
+      <CTAAnchor href={href} {...props}>
+        {children}
+      </CTAAnchor>
+    </div>
+  ),
 };

@@ -62,9 +62,9 @@ const config: Omit<Config, "content"> = {
           "100%": { "background-position": "100%" },
         },
         spin: {
-          "0%": { transform: "rotate(0deg)" },
-          "50%": { transform: "rotate(170deg)" },
-          "100%": { transform: "rotate(360deg)" },
+          "0%": { transform: "rotate(0deg) scale(2)" },
+          "50%": { transform: "rotate(170deg) scale(2)" },
+          "100%": { transform: "rotate(360deg) scale(2)" },
         },
         "blur-pulse": {
           "0%": { filter: "blur(45px)" },

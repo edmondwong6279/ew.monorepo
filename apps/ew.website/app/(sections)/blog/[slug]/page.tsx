@@ -1,5 +1,7 @@
 import { getData } from "@/utils";
 import { Card } from "@repo/ui/card";
+import { CTA } from "@repo/ui/cta-button";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
@@ -22,16 +24,25 @@ export default async function BlobPage({
   } = blogResult[0];
 
   return (
-    <section className="flex min-h-[calc(100svh-4.5rem)] flex-col items-center justify-start gap-8">
-      <header className="w-full text-left">
-        <h1 className="text-2xl">{title}</h1>
-        <time className="text-sm text-gray-1" dateTime={postDate}>
-          {postDate}
-        </time>
+    <div className="min-h-[calc(100svh-13.5rem)] ">
+      <header className="flex justify-between w-full text-left mb-5">
+        <div className="w-fit">
+          <Link href="/blog">
+            <CTA>Back to Blogs</CTA>
+          </Link>
+        </div>
+        <div className="text-right">
+          <h1 className="text-2xl">{title}</h1>
+          <time className="text-sm text-gray-1" dateTime={postDate}>
+            {postDate}
+          </time>
+        </div>
       </header>
-      <Card className="flex flex-col gap-2">
-        <ReactMarkdown rehypePlugins={[rehypeRaw]}>{content}</ReactMarkdown>
-      </Card>
-    </section>
+      <section className="flex flex-col items-center justify-start gap-8">
+        <Card className="flex flex-col gap-2">
+          <ReactMarkdown rehypePlugins={[rehypeRaw]}>{content}</ReactMarkdown>
+        </Card>
+      </section>
+    </div>
   );
 }

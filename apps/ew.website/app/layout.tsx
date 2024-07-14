@@ -37,7 +37,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
-        {/* The below is for the blurry blob background */}
+        {/* The below is for the blurry blob background TODO if we want it interactive or something then move it into a client component and import it here */}
         <div className="absolute z-[-20] w-full h-full bg-gradient-to-b from-[rgba(239, 218, 218, 0.1)] via-[rgba(237, 237, 237, 0.1)] to-[rgba(135, 135, 135, 0.1)] backdrop-blur-[40px] opacity-50 pointer-events-none" />
         <div className="absolute h-full w-full pointer-events-none">
           <div className="sticky top-0 bottom-0 h-screen overflow-hidden -z-10">
