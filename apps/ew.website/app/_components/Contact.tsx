@@ -50,6 +50,7 @@ export default function Contact() {
   return (
     <>
       <CTA
+        className="w-40"
         onClick={() => {
           setShowForm(true);
           modalRef.current?.showModal();
@@ -58,13 +59,13 @@ export default function Contact() {
         Contact me
       </CTA>
       <dialog
-        className="transition-all backdrop:backdrop-blur-md backdrop:transition-all rounded-lg px-5 py-4 overflow-auto text-off-white drop-shadow-lg bg-transparent"
+        className="transition-all backdrop:backdrop-blur-md backdrop:transition-all rounded-lg px-5 py-4 overflow-auto text-off-white drop-shadow-lg bg-transparent w-auto md:w-3/4 max-w-[800px]"
         ref={modalRef}
       >
         <header className="flex justify-between gap-8 mb-4">
-          <h3 className="text-off-white tracking-[1rem] font-light">
+          <h1 className="text-off-white text-xl leading-2xl sm:text-2xl font-medium">
             Get in touch
-          </h3>
+          </h1>
           <button type="button" onClick={() => modalRef.current?.close()}>
             &times;
           </button>
@@ -74,7 +75,7 @@ export default function Contact() {
             className="flex flex-col justify-center items-center gap-4"
             action={formAction}
           >
-            <div className="flex gap-4 flex-col md:flex-row w-full">
+            <div className="flex gap-4 flex-col justify-between md:flex-row w-full">
               <label className="flex flex-col w-full">
                 Name
                 <input
@@ -84,7 +85,7 @@ export default function Contact() {
                   className={`bg-gray-1 p-3 rounded-md outline-none transition-shadow ${name !== undefined ? "drop-shadow-red" : "drop-shadow-none"}`}
                 />
               </label>
-              <label className="flex flex-col">
+              <label className="flex flex-col w-full">
                 Contact Email
                 <input
                   required

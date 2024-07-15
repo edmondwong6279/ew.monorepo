@@ -22,7 +22,7 @@ export default function NavBar({
   const { theme } = useContext(ThemeContext);
 
   const [viewIsMobile, setviewIsMobile] = useState(
-    size.width ? size.width < mdBreakpoint : false,
+    size.width ? size.width < mdBreakpoint : false
   );
 
   useEffect(() => {
@@ -62,11 +62,11 @@ export default function NavBar({
 
   const activeNavItem = useMemo(() => {
     return navItems.filter(({ link }) =>
-      link !== "/" ? path.startsWith(link) : path === link,
+      link !== "/" ? path.startsWith(link) : path === link
     )[0];
   }, [navItems, path]);
 
-  return size.width ? (
+  return (
     <nav
       className={`sticky flex flex-col items-center top-0 w-full py-5 px-10 z-50 transition-all ${scrolled || mobileMenuIsOpen ? "bg-[#0a0a0a]" : "bg-transparent"} ${mobileMenuIsOpen ? "h-screen justify-start" : "justify-center"} ${viewIsMobile ? "py-2 px-5" : "py-5 px-10"}`}
     >
@@ -102,7 +102,5 @@ export default function NavBar({
         ))}
       </ol>
     </nav>
-  ) : (
-    <></>
   );
 }

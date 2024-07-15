@@ -6,12 +6,16 @@ import { Card } from "@repo/ui/card";
 export default function CustomCard({
   children,
   image,
+  className,
 }: {
   children: React.ReactNode;
   image?: { url: string; alt: string };
+  className?: string;
 }) {
   return (
-    <Card className="p-0 flex flex-col sm:flex-row">
+    <Card
+      className={`p-0 flex flex-col sm:flex-row ${className ? className : ""}`}
+    >
       <div
         className={`p-5 flex flex-col items-start justify-start gap-4 ${image ? "sm:w-2/3" : "w-full"}`}
       >
