@@ -4,6 +4,7 @@ export function CTA({
   children,
   onClick,
   props,
+  className,
 }: {
   children: ReactNode;
   onClick?: MouseEventHandler<HTMLButtonElement>;
@@ -11,10 +12,11 @@ export function CTA({
     React.ButtonHTMLAttributes<HTMLButtonElement>,
     HTMLButtonElement
   >;
+  className?: string;
 }): JSX.Element {
   return (
     <button
-      className="ui-group ui-block ui-relative ui-rounded-lg ui-px-5 ui-py-4 ui-text-2xl ui-text-center ui-drop-shadow-3xl hover:ui-cursor-pointer disabled:ui-grayscale disabled:hover:ui-cursor-not-allowed"
+      className={`ui-group ui-block ui-relative ui-rounded-lg ui-px-5 ui-py-4 ui-text-2xl ui-text-center ui-drop-shadow-3xl hover:ui-cursor-pointer disabled:ui-grayscale disabled:hover:ui-cursor-not-allowed ${className ? className : ""}`}
       onClick={onClick}
       type="submit"
       {...props}

@@ -28,8 +28,10 @@ export default async function Background() {
                   }
                 >
                   <header className="mb-4">
+                    <h4 className="text-sm text-gray-1 tracking-[0.8rem]">
+                      {item.subtitle}
+                    </h4>
                     <h3 className="text-2xl">{item.title}</h3>
-                    <h4 className="text-sm text-gray-1">{item.subtitle}</h4>
                   </header>
                   <ReactMarkdown
                     className="list-disc"
