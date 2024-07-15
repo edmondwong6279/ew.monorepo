@@ -31,7 +31,7 @@ export default async function Background() {
                     <h4 className="text-sm text-gray-1 tracking-[0.8rem]">
                       {item.subtitle}
                     </h4>
-                    <h3 className="text-2xl">{item.title}</h3>
+                    <h3 className="text-2xl font-medium">{item.title}</h3>
                   </header>
                   <ReactMarkdown
                     className="list-disc"
