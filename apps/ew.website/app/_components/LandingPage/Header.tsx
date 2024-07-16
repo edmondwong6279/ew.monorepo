@@ -1,4 +1,4 @@
-export default function LandingPageHeader({
+export default function Header({
   supertitle,
   title,
   className,

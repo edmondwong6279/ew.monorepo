@@ -7,5 +7,11 @@ export function SubmitButton() {
   // TODO add loading state to buttons
   const { pending } = useFormStatus();
 
-  return <CTA props={{ type: "submit", disabled: pending }}>Submit</CTA>;
+  console.log(pending);
+
+  return (
+    <CTA props={{ type: "submit", disabled: pending }} isLoading={pending}>
+      Submit
+    </CTA>
+  );
 }
