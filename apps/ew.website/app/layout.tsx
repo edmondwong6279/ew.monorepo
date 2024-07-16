@@ -4,8 +4,11 @@ import { Roboto_Condensed } from "next/font/google";
 // TODO remove the ui package tailwind
 import "@repo/ui/styles.css";
 import "./globals.css";
+import "react-loading-skeleton/dist/skeleton.css";
+
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
+import { SkeletonTheme } from "react-loading-skeleton";
 
 const font = Roboto_Condensed({ subsets: ["latin"] });
 
@@ -34,7 +37,9 @@ export default function RootLayout({
           ]}
         />
         <main className="max-w-screen-xl flex flex-col items-center mx-2">
-          {children}
+          <SkeletonTheme baseColor="#212121" highlightColor="#ededed">
+            {children}
+          </SkeletonTheme>
         </main>
         <Footer />
         {/* The below is for the blurry blob background TODO if we want it interactive or something then move it into a client component and import it here */}

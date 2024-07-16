@@ -16,6 +16,28 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     children: <>CTAButton</>,
-    onClick: () => {},
+  },
+};
+
+export const Disabled: Story = {
+  args: {
+    children: <>Disabled Button</>,
+    props: { disabled: true },
+  },
+};
+
+export const Loading: Story = {
+  args: {
+    children: <>This is loading</>,
+    isLoading: true,
+  },
+};
+
+export const LoadingAndDisabled: Story = {
+  args: {
+    children: <>This is loading</>,
+    props: { disabled: true },
+
+    isLoading: true,
   },
 };

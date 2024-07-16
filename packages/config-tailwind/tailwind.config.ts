@@ -51,8 +51,9 @@ const config: Omit<Config, "content"> = {
       },
       animation: {
         "spin-slow":
-          "spin 6.5s ease-in-out infinite, blur-pulse 4.5s ease-in-out infinite",
-        "spin-medium": "spin 2s linear infinite",
+          "spin-and-scale 6.5s ease-in-out infinite, blur-pulse 4.5s ease-in-out infinite",
+        "spin-medium": "spin-and-scale 2s linear infinite",
+        "spin-fast": "spin 0.5s linear infinite",
         "bg-spin": "bg-spin 3s ease-in-out infinite",
       },
       keyframes: {
@@ -61,10 +62,15 @@ const config: Omit<Config, "content"> = {
           "50%": { "background-position": "0 100%" },
           "100%": { "background-position": "100%" },
         },
-        spin: {
+        "spin-and-scale": {
           "0%": { transform: "rotate(0deg) scale(2)" },
           "50%": { transform: "rotate(170deg) scale(2)" },
           "100%": { transform: "rotate(360deg) scale(2)" },
+        },
+        spin: {
+          "0%": { transform: "rotate(0deg)" },
+          "50%": { transform: "rotate(170deg)" },
+          "100%": { transform: "rotate(360deg)" },
         },
         "blur-pulse": {
           "0%": { filter: "blur(45px)" },
