@@ -15,3 +15,45 @@ ul {
 ul > li {
   list-style-type: disc;
 }
+
+/* This isn't in TW yet so we're doing it manually */
+/* https://www.youtube.com/watch?v=vmDEHAzj2XE Kevin Powell is awesome */
+dialog {
+  display: none;
+  opacity: 0;
+  scale: 0.7;
+
+  transition-property: display scale opacity;
+  transition-duration: 0.2s;
+  transition-behavior: allow-discrete;
+}
+
+dialog[open] {
+  display: block;
+  opacity: 1;
+  scale: 1;
+
+  @starting-style {
+    opacity: 0;
+    scale: 1.5;
+  }
+}
+
+dialog::backdrop {
+  opacity: 0;
+  backdrop-filter: blur(40px);
+
+  transition-property: opacity display overlay;
+  transition-duration: 0.2s;
+  transition-behavior: allow-discrete;
+}
+
+dialog[open]::backdrop {
+  opacity: 1;
+}
+
+@starting-style {
+  dialog[open]::backdrop {
+    opacity: 0;
+  }
+}

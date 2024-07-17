@@ -22,7 +22,7 @@ export default function NavBar({
   const { theme } = useContext(ThemeContext);
 
   const [viewIsMobile, setviewIsMobile] = useState(
-    size.width ? size.width < mdBreakpoint : false
+    size.width ? size.width < mdBreakpoint : false,
   );
 
   useEffect(() => {
@@ -49,7 +49,6 @@ export default function NavBar({
     }
   }, [viewIsMobile, size]);
 
-  // for freezing the body
   if (typeof window !== "undefined") {
     if (mobileMenuIsOpen) {
       document.body.style.height = "100%";
@@ -62,7 +61,7 @@ export default function NavBar({
 
   const activeNavItem = useMemo(() => {
     return navItems.filter(({ link }) =>
-      link !== "/" ? path.startsWith(link) : path === link
+      link !== "/" ? path.startsWith(link) : path === link,
     )[0];
   }, [navItems, path]);
 

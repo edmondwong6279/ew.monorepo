@@ -47,26 +47,33 @@ export default function Contact() {
     }
   }, [isSuccess]);
 
+  const openDialog = () => {
+    setShowForm(true);
+    modalRef.current?.showModal();
+    document.body.style.height = "100%";
+    document.body.style.overflow = "hidden";
+  };
+
+  const closeDialog = () => {
+    modalRef.current?.close();
+    document.body.style.height = "unset";
+    document.body.style.overflow = "unset";
+  };
+
   return (
     <>
-      <CTA
-        className="w-40"
-        onClick={() => {
-          setShowForm(true);
-          modalRef.current?.showModal();
-        }}
-      >
+      <CTA className="w-40" onClick={openDialog}>
         Contact me
       </CTA>
       <dialog
-        className="transition-all backdrop:backdrop-blur-md backdrop:transition-all rounded-lg px-5 py-4 overflow-auto text-off-white drop-shadow-lg bg-transparent w-auto md:w-3/4 max-w-[800px]"
+        className="rounded-lg mx-4 md:mx-auto px-5 py-4 overflow-auto text-off-white drop-shadow-lg bg-transparent w-auto md:w-3/4 max-w-[800px]"
         ref={modalRef}
       >
         <header className="flex justify-between gap-8 mb-4">
           <h1 className="text-off-white text-xl leading-2xl sm:text-2xl font-medium">
             Get in touch
           </h1>
-          <button type="button" onClick={() => modalRef.current?.close()}>
+          <button type="button" onClick={closeDialog}>
             &times;
           </button>
         </header>
@@ -121,7 +128,7 @@ export default function Contact() {
           <div className="flex flex-col justify-center items-center gap-4">
             <h1>Thank you for getting in touch</h1>
             <p>I will respond as soon as possible</p>
-            <CTA onClick={() => modalRef.current?.close()}>Return</CTA>
+            <CTA onClick={closeDialog}>Return</CTA>
           </div>
         )}
         <div className="absolute left-0 top-0 w-full h-full bg-gradient-to-b from-[#EFDADA] via-[#EDEDED] to-[#878787] opacity-20 -z-10" />
