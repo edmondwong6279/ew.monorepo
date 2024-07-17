@@ -3,7 +3,7 @@ import Skeleton from "react-loading-skeleton";
 
 export function Loading({ withImage = false }: { withImage?: boolean }) {
   return (
-    <Card className="my-3 flex gap-2 flex-col md:flex-row">
+    <Card className="my-3 flex gap-2 flex-col md:flex-row w-full">
       <Skeleton
         count={5}
         style={{ display: "flex", gap: 40 }}
