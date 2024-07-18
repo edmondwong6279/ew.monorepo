@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${font.className} min-h-screen flex flex-col items-center relative bg-gray text-off-white [--slideup-delay:0ms] [--slideup-delay:100ms] [--slideup-delay:200ms] [--slideup-delay:300ms]`}
+        className={`${font.className} min-h-screen flex flex-col items-center relative bg-gray text-off-white [--slideup-delay:100ms] [--slideup-delay:200ms] [--slideup-delay:300ms] [--slideup-delay:0ms] `}
         style={{
           backgroundImage: `url(/noise.png)`,
           height: "unset",

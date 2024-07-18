@@ -10,7 +10,7 @@ export default async function BlobPage({
   children: React.ReactNode;
 }) {
   return (
-    <section className="flex flex-col w-full items-center justify-start min-h-[calc(100svh-13.5rem)] gap-8">
+    <section className="flex flex-col w-full items-center justify-start min-h-[calc(100svh-13.5rem)] gap-8 animate-slideup opacity-0">
       <Link href="/blog" className="self-start">
         <CTA>Back to Blogs</CTA>
       </Link>
