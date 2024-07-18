@@ -67,7 +67,7 @@ export default function NavBar({
 
   return (
     <nav
-      className={`sticky flex flex-col items-center top-0 w-full py-5 px-10 z-50 transition-all ${scrolled || mobileMenuIsOpen ? "bg-[#0a0a0a]" : "bg-transparent"} ${mobileMenuIsOpen ? "h-screen justify-start" : "justify-center"} ${viewIsMobile ? "py-2 px-5" : "py-5 px-10"}`}
+      className={`sticky flex flex-col items-center top-0 w-full py-5 px-10 z-50 transition-colors ${scrolled || mobileMenuIsOpen ? "bg-[#0a0a0a]" : "bg-transparent"} ${mobileMenuIsOpen ? "h-screen justify-start" : "justify-center"} ${viewIsMobile ? "py-2 px-5" : "py-5 px-10"}`}
     >
       {viewIsMobile ? (
         <header className="flex justify-between items-center w-full">

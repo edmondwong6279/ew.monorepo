@@ -15,7 +15,7 @@ export function Card({
   // Note there was also ui-backdrop-blur-sm added to the wrapping div but it takes a hit on performance for browsers on lower specced systems booo
   return (
     <div
-      className={`ui-block ui-relative ui-rounded-lg ui-px-5 ui-py-4 ui-overflow-hidden ui-text-off-white ui-drop-shadow-lg ${className}`}
+      className={`ui-relative ui-rounded-lg ui-px-5 ui-py-4 ui-overflow-hidden ui-text-off-white ui-drop-shadow-lg ${className}`}
       {...props}
     >
       {children}
