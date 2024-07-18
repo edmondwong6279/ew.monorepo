@@ -23,8 +23,6 @@ export default async function BlobPage({
 
   const date = new Date(postDate).toLocaleDateString("en-GB");
 
-  await sleep(1000000);
-
   return (
     <>
       <header className="flex justify-between flex-col w-full text-left my-5 gap-4">

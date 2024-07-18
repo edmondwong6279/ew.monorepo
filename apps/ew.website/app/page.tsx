@@ -1,8 +1,9 @@
+import { Suspense } from "react";
+
 import { CTA } from "@repo/ui/cta-anchor";
 
 import Header from "@/components/LandingPage/Header";
 import MoreInfo from "@/components/LandingPage/MoreInfo";
-import { Suspense } from "react";
 import { Loading } from "@/components/Loading";
 
 export default function Home(): JSX.Element {

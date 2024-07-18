@@ -36,10 +36,6 @@ const config: Omit<Config, "content"> = {
         "4xl": "8rem",
         "5xl": "10rem",
       },
-      backgroundImage: {
-        noise:
-          "url('https://res.cloudinary.com/dtawgkgnl/image/upload/portfolio/images/noise_u27g39.png')",
-      },
       dropShadow: {
         "3xl": "0px 4px 4px rgba(0, 0, 0, 0.25)",
         red: "0px 0px 10px rgba(255, 0, 0, 1)",
