@@ -51,6 +51,9 @@ const config: Omit<Config, "content"> = {
         "spin-medium": "spin-and-scale 2s linear infinite",
         "spin-fast": "spin 0.5s linear infinite",
         "bg-spin": "bg-spin 3s ease-in-out infinite",
+        "slideup-to-half":
+          "slideup-to-half 1s ease var(--slideup-delay, 0) forwards",
+        slideup: "slideup 1s ease var(--slideup-delay, 0) forwards",
       },
       keyframes: {
         "bg-spin": {
@@ -72,6 +75,26 @@ const config: Omit<Config, "content"> = {
           "0%": { filter: "blur(45px)" },
           "40%": { filter: "blur(70px)" },
           "100%": { filter: "blur(45px)" },
+        },
+        slideup: {
+          from: {
+            opacity: "0",
+            transform: "translateY(10px)",
+          },
+          to: {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
+        "slideup-to-half": {
+          from: {
+            opacity: "0",
+            transform: "translateY(10px)",
+          },
+          to: {
+            opacity: "0.5",
+            transform: "translateY(0)",
+          },
         },
       },
     },

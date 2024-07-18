@@ -1,4 +1,4 @@
-import { Loading } from "@/app/_components/Loading";
+import { CardSkeleton } from "@repo/ui/card-skeleton";
 import { CTA } from "@repo/ui/cta-button";
 import Link from "next/link";
 import React, { Suspense } from "react";
@@ -17,13 +17,11 @@ export default async function BlobPage({
 
       <Suspense
         fallback={
-          <>
-            <div style={{ width: "100%" }}>
-              <Skeleton width={200} />
-              <Skeleton height={100} />
-              <Loading />
-            </div>
-          </>
+          <div style={{ width: "100%" }}>
+            <Skeleton className="opacity-50" width={200} />
+            <Skeleton className="opacity-50" height={100} />
+            <CardSkeleton withImage={true} />
+          </div>
         }
       >
         {children}

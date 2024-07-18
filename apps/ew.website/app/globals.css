@@ -23,6 +23,7 @@ dialog {
   opacity: 0;
   scale: 0.7;
 
+  transition-timing-function: ease-in-out;
   transition-property: display scale opacity;
   transition-duration: 0.2s;
   transition-behavior: allow-discrete;

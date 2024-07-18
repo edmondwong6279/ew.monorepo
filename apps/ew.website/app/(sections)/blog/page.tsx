@@ -15,7 +15,7 @@ export default async function Blog() {
   ]);
 
   return (
-    <section className="flex min-h-[calc(100svh-13.5rem)] flex-col items-center justify-start">
+    <>
       <p className="text-left w-full p-6">{description}</p>
       <ul className="grid grid-flow-row grid-cols-1 sm:grid-cols-2 md:grid-cols-3 m-0 gap-4">
         {blogs.map((blog, idx) => {
@@ -47,6 +47,6 @@ export default async function Blog() {
           );
         })}
       </ul>
-    </section>
+    </>
   );
 }

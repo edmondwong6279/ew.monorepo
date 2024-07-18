@@ -10,9 +10,9 @@ export default function Home(): JSX.Element {
   return (
     <>
       <header className="relative flex flex-col min-h-[calc(100svh-4rem)] justify-center md:pb-8">
-        <Header supertitle="My name is" title="Ed Wong" />
-        <Header supertitle="I am a" title="Full Stack Dev" />
-        <div className="max-w-60 self-center">
+        <Header supertitle="My name is" title="Ed Wong" delay={0} />
+        <Header supertitle="I am a" title="Full Stack Dev" delay={200} />
+        <div className="max-w-60 self-center opacity-0 animate-slideup ">
           <CTA href="#more-info">Continue</CTA>
         </div>
       </header>

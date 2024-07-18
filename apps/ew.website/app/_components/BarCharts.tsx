@@ -14,6 +14,12 @@ import Tooltip from "./Tooltip";
  * The first 3 is where the label for the skill goes.
  **/
 const textOffset = 3;
+const colourArray = [
+  "fill-fuchsia-400",
+  "fill-green-400",
+  "fill-red-400",
+  "fill-blue-400",
+];
 
 export function SkillsGraph({ skillGroups }: { skillGroups: SkillGroups }) {
   const [ref, dims] = useDims<HTMLDivElement>();
@@ -89,7 +95,7 @@ export function SkillsGraph({ skillGroups }: { skillGroups: SkillGroups }) {
                 value: number;
               }[];
             },
-            idx1: number
+            idx1: number,
           ) => (
             <CustomCard key={idx1}>
               <h2 className="mt-0 text-2xl font-medium">{groupName}</h2>
@@ -133,7 +139,7 @@ export function SkillsGraph({ skillGroups }: { skillGroups: SkillGroups }) {
                       description,
                       value,
                     }: { title: string; description: string; value: number },
-                    idx2: number
+                    idx2: number,
                   ) => {
                     return (
                       <g
@@ -159,7 +165,7 @@ export function SkillsGraph({ skillGroups }: { skillGroups: SkillGroups }) {
                         </text>
                         <motion.rect
                           key={idx2}
-                          className={`opacity-50 ${idx1 % 2 === 0 ? "fill-yellow-300" : "fill-green-300"}`}
+                          className={`opacity-50 ${colourArray[idx1 % colourArray.length]}`}
                           x={textOffset * xUnit}
                           y={(idx2 + 1) * 65}
                           height={60}
@@ -195,11 +201,11 @@ export function SkillsGraph({ skillGroups }: { skillGroups: SkillGroups }) {
                         </motion.text>
                       </g>
                     );
-                  }
+                  },
                 )}
               </svg>
             </CustomCard>
-          )
+          ),
         )}
       </div>
     </>
