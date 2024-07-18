@@ -1,4 +1,4 @@
-import { getData, sleep } from "@/utils";
+import { getData } from "@/utils";
 import { Card } from "@repo/ui/card";
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";

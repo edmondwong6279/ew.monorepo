@@ -10,7 +10,7 @@ export default async function Background() {
   } = await getData("about-page?populate=deep");
 
   return (
-    <div className="flex min-h-[calc(100svh-13.5rem)] flex-col items-center justify-between">
+    <>
       <p className="my-12 self-start">{description}</p>
       <div className="flex flex-col gap-5">
         {aboutGroups.map((group, idx) => (
@@ -45,6 +45,6 @@ export default async function Background() {
           </section>
         ))}
       </div>
-    </div>
+    </>
   );
 }

@@ -6,11 +6,11 @@ import rehypeRaw from "rehype-raw";
 
 export default async function Projects() {
   const {
-    attributes: { title, description, portfolioItems },
+    attributes: { description, portfolioItems },
   } = await getData("portfolio-page?populate=deep");
 
   return (
-    <section className="flex min-h-[calc(100svh-13.5rem)] flex-col items-center justify-between">
+    <>
       <p className="my-12 self-start">{description}</p>
       <section className="flex flex-col gap-5">
         {portfolioItems.map((item, idx) => (
@@ -50,9 +50,7 @@ export default async function Projects() {
                   playsInline
                   autoPlay
                   loop
-                  poster={
-                    "https://res.cloudinary.com/dtawgkgnl/image/upload/portfolio/images/loader_bdh22k.gif"
-                  }
+                  poster={"/loader.gif"}
                 >
                   <source src={item.mediaUrl} type={"video/mp4"} />
                 </video>
@@ -61,6 +59,6 @@ export default async function Projects() {
           </div>
         ))}
       </section>
-    </section>
+    </>
   );
 }

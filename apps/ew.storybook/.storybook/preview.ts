@@ -1,5 +1,6 @@
 import type { Preview } from "@storybook/react";
 import "@repo/ui/styles.css";
+import "react-loading-skeleton/dist/skeleton.css";
 
 const preview: Preview = {
   parameters: {
