@@ -7,7 +7,6 @@ import { useDims, useWindowSize } from "@/hooks";
 import { SkillGroups } from "@/types";
 
 import CustomCard from "./CustomCard";
-import Tooltip from "./Tooltip";
 
 /**
  * SVG here is broken into xUnits
@@ -30,7 +29,7 @@ export function SkillsGraph({ skillGroups }: { skillGroups: SkillGroups }) {
   const [description, setDescription] = useState("");
   const [skillTitle, setSkillTitle] = useState("");
 
-  const xUnit = Math.min(dims.width / 10, 116);
+  const xUnit = dims.width ? Math.min(dims.width / 10, 116) : 0;
   const isMobile = (winSize?.width || 0) < 768;
 
   const handleMouseMove = (e: React.MouseEvent) => {
@@ -65,19 +64,17 @@ export function SkillsGraph({ skillGroups }: { skillGroups: SkillGroups }) {
         {/* Tooltip */}
         <div
           style={{ top: tooltip.top, left: tooltip.left }}
-          className={`absolute w-60 md:w-96 my-0 transition-opacity h-64 z-10 ${showTooltip ? "opacity-100" : "opacity-0 pointer-events-none"} ${isMobile && showTooltip ? "pointer-events-auto" : "pointer-events-none"}`}
+          className={`absolute w-60 md:w-96 my-0 transition-opacity bg-opacity-90 bg-gray-1 z-10 rounded-lg px-5 py-4 overflow-hidden text-off-white drop-shadow-lg ${showTooltip ? "opacity-100" : "opacity-0"} ${isMobile && showTooltip ? "pointer-events-auto" : "pointer-events-none"}`}
         >
-          <Tooltip>
-            <div className="flex justify-between mb-2">
-              <h3 className="font-medium">{skillTitle}</h3>
-              {isMobile && (
-                <button type="button" onClick={() => setShowTooltip(false)}>
-                  &times;
-                </button>
-              )}
-            </div>
-            <p>{description}</p>
-          </Tooltip>
+          <div className="flex justify-between mb-2">
+            <h3 className="font-medium">{skillTitle}</h3>
+            {isMobile && (
+              <button type="button" onClick={() => setShowTooltip(false)}>
+                &times;
+              </button>
+            )}
+          </div>
+          <p>{description}</p>
         </div>
         {skillGroups.map(
           (
@@ -103,7 +100,7 @@ export function SkillsGraph({ skillGroups }: { skillGroups: SkillGroups }) {
               {/* Plot the axes and labels first */}
               {/* Then plot each bar individually */}
               <svg
-                className="w-full fill-off-white"
+                className={`w-full fill-off-white transition-opacity ${xUnit !== 0 ? "opacity-100" : "opacity-0"}`}
                 height={(skills.length + 1) * 65 - 5}
               >
                 <text
@@ -119,7 +116,7 @@ export function SkillsGraph({ skillGroups }: { skillGroups: SkillGroups }) {
                   x2={textOffset * xUnit - 5}
                   y1={65}
                   y2={65 * (skills.length + 1) - 5}
-                  className="stroke-2"
+                  className="stroke-2 stroke-off-white"
                 />
                 {new Array(6).fill(undefined).map((_, idx2) => (
                   <line
@@ -128,7 +125,8 @@ export function SkillsGraph({ skillGroups }: { skillGroups: SkillGroups }) {
                     x2={textOffset * xUnit + idx2 * xUnit}
                     y1={65}
                     y2={65 * (skills.length + 1) - 5}
-                    className="opacity-50 stroke-1"
+                    style={{ strokeDasharray: 4 }}
+                    className="opacity-50 stroke-1 stroke-off-white"
                   />
                 ))}
                 {/* Add the description as a drop down or tick box thing/ hover state for desktop (try to not repeat dom)*/}
@@ -138,7 +136,11 @@ export function SkillsGraph({ skillGroups }: { skillGroups: SkillGroups }) {
                       title,
                       description,
                       value,
-                    }: { title: string; description: string; value: number },
+                    }: {
+                      title: string;
+                      description: string;
+                      value: number;
+                    },
                     idx2: number,
                   ) => {
                     return (
