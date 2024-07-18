@@ -1,4 +1,4 @@
 export interface Dims {
-  width: number;
-  height: number;
+  width?: number;
+  height?: number;
 }

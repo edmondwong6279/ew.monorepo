@@ -4,7 +4,10 @@ import type { Dims } from "@/types";
 
 export const useDims = <T>(): [MutableRefObject<T | null>, Dims] => {
   const ref = useRef<T | null>(null);
-  const [dims, setDims] = useState<Dims>({ width: 0, height: 0 });
+  const [dims, setDims] = useState<Dims>({
+    width: undefined,
+    height: undefined,
+  });
 
   useEffect(() => {
     const resizeObserver = new ResizeObserver((entries) => {

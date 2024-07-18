@@ -67,7 +67,7 @@ export default function NavBar({
 
   return (
     <nav
-      className={`opacity-0 sticky flex flex-col items-center top-0 w-full py-5 px-10 z-50 transition-colors animate-slideup  ${scrolled || mobileMenuIsOpen ? "bg-[#0a0a0a]" : "bg-transparent"} ${mobileMenuIsOpen ? "h-screen justify-start" : "justify-center"} py-2 px-5 md:py-5 md:px-10`}
+      className={`opacity-0 sticky flex flex-col items-center top-0 w-full py-5 px-10 z-50 transition-colors animate-slideup ${scrolled || mobileMenuIsOpen ? "bg-[#0a0a0a]" : "bg-transparent"} ${mobileMenuIsOpen ? "h-screen justify-start" : "justify-center"} py-2 px-5 md:py-5 md:px-10`}
     >
       <header className="md:hidden flex justify-between items-center w-full">
         <div className="relative">
