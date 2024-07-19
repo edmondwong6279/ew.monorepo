@@ -61,6 +61,7 @@ export interface HomePageType {
       description: string;
       link: string;
     }[];
+    mediaUrls: { id: number; mediaUrl: string }[];
   };
 }
 
