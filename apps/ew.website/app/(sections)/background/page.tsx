@@ -14,7 +14,7 @@ export default async function Background() {
       <p className="my-12 self-start">{description}</p>
       <div className="flex flex-col gap-5">
         {aboutGroups.map((group, idx) => (
-          <section key={idx}>
+          <section key={idx} id={group.groupTitle}>
             <h2 className="text-2xl md:text-3xl leading-8 md:leading-3xl self-start">
               {group.groupTitle}
             </h2>
