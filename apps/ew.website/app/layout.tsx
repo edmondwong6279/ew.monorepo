@@ -28,7 +28,6 @@ export const metadata: Metadata = {
     title: "Ed Wong",
     description: "Ed Wong's portfolio website",
     card: "summary_large_image",
-    site: "@eMartiiin94",
     images: "/twitter-image.jpg",
   },
 };
