@@ -5,8 +5,8 @@ import { Roboto_Condensed } from "next/font/google";
 
 // TODO remove the ui package tailwind
 import "@repo/ui/styles.css";
-import "react-loading-skeleton/dist/skeleton.css";
 import "./globals.css";
+import "react-loading-skeleton/dist/skeleton.css";
 
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
