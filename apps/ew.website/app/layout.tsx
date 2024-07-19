@@ -5,8 +5,8 @@ import { Roboto_Condensed } from "next/font/google";
 
 // TODO remove the ui package tailwind
 import "@repo/ui/styles.css";
-import "./globals.css";
 import "react-loading-skeleton/dist/skeleton.css";
+import "./globals.css";
 
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
@@ -16,8 +16,21 @@ import Background from "@/components/Background";
 const font = Roboto_Condensed({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://ed-wong.dev"),
   title: "Ed Wong",
   description: "Ed Wong's portfolio website",
+  openGraph: {
+    title: "Ed Wong",
+    description: "Ed Wong's portfolio website",
+    images: "/opengraph-image.jpg",
+  },
+  twitter: {
+    title: "Ed Wong",
+    description: "Ed Wong's portfolio website",
+    card: "summary_large_image",
+    site: "@eMartiiin94",
+    images: "/twitter-image.jpg",
+  },
 };
 
 export default function RootLayout({

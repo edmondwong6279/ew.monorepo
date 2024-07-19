@@ -4,7 +4,7 @@ export default async function Footer() {
   let message = "";
   try {
     const res1 = await fetch(
-      "https://api.github.com/repos/edmondwong6279/ew.monorepo/git/refs/heads/main"
+      "https://api.github.com/repos/edmondwong6279/ew.monorepo/git/refs/heads/main",
     );
     const blobbed1 = await res1.blob();
     const parsed1 = await blobbed1.text();
@@ -20,7 +20,7 @@ export default async function Footer() {
     message = `${lastTimeStamp.toUTCString()} - ${res2json.message}`;
   } catch (e) {
     console.error(
-      `Error fetching latest commit messages (Repo may not be public): ${e}`
+      `Error fetching latest commit messages (Repo may not be public): ${e}`,
     );
   }
 
