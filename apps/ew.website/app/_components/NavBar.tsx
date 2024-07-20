@@ -84,7 +84,7 @@ export default function NavBar({
         />
       </header>
       <ol
-        className={`justify-between flex flex-col md:flex-row items-center w-full max-w-screen-xl transition-opacity opacity-0 md:opacity-100 md:max-h-none ${mobileMenuIsOpen ? "h-3/4 opacity-100" : "opacity-0 max-h-0 overflow-hidden"}`}
+        className={`justify-between flex flex-col md:flex-row items-center w-full max-w-screen-xl transition-opacity opacity-0 md:opacity-100 md:max-h-none overflow-hidden md:overflow-visible ${mobileMenuIsOpen ? "h-3/4 opacity-100" : "opacity-0 max-h-0"}`}
       >
         {navItems.map(({ link, title }, idx) => (
           <li className="relative" key={`${idx}`}>
