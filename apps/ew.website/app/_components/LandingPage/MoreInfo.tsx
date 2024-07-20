@@ -4,6 +4,7 @@ import rehypeRaw from "rehype-raw";
 import { getData } from "@/utils";
 
 import CustomCard from "@/components/CustomCard";
+import { CTA } from "@repo/ui/cta-anchor";
 
 export default async function MoreInfo(): Promise<JSX.Element> {
   const { attributes } = await getData("home-page?populate=deep");
@@ -24,14 +25,12 @@ export default async function MoreInfo(): Promise<JSX.Element> {
               {attributes.description}
             </ReactMarkdown>
             <br />
-            <p>Contact details and links:</p>
-            <br />
-            <ul>
+            <ul className=" flex-1 items-center grid grid-cols-1 sm:grid-cols-2 gap-4 mx-auto">
               {attributes.contactItems.map((item, idx) => (
-                <li key={idx}>
-                  <a href={item.link} target="_blank">
+                <li key={idx} className="list-none">
+                  <CTA href={item.link} newTab>
                     {item.name}
-                  </a>
+                  </CTA>
                 </li>
               ))}
             </ul>
