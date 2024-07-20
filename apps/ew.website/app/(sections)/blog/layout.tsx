@@ -8,7 +8,7 @@ export default async function Blog({
   children: React.ReactNode;
 }) {
   return (
-    <section className="flex min-h-[calc(100svh-13.5rem)] flex-col items-center justify-start w-full animate-slideup opacity-0">
+    <section className="flex min-h-[calc(100svh-13.5rem)] flex-col items-center justify-start w-full animate-slideup opacity-0 mb-8">
       <Suspense
         fallback={
           <>
