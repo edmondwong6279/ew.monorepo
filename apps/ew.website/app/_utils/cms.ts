@@ -22,19 +22,23 @@ import type { AllInputTypes, PossibleInputTypes } from "@/types";
  */
 
 export const getData = async <T extends AllInputTypes>(
-  searchString: T
+  searchString: T,
 ): Promise<PossibleInputTypes<T>> => {
   const requestUrl = `${
     process.env.NEXT_PUBLIC_STRAPI_API_URL || "http://127.0.0.1:1337"
   }/api/${searchString}`;
 
+  // Force the fetches to the CMS to be always cached, and add a tag to these
+  // requests so we can post to the cache endpoint to revalidate all the content.
+  // This can be improved further down the line by adding custom tags per section
+  // of the site.
   const response = await fetch(requestUrl, {
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${process.env.CMS_KEY}`,
     },
-    // TODO - add cache control endpoint for strapi to invalidate the cache
-    next: { revalidate: 300 }, // 5 minute cache
+    cache: "force-cache",
+    next: { tags: ["all-content"] },
   });
 
   if (!response.ok) {
