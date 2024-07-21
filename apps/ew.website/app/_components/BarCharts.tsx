@@ -14,9 +14,9 @@ import CustomCard from "./CustomCard";
  **/
 const textOffset = 3;
 const colourArray = [
-  "fill-fuchsia-400",
-  "fill-green-400",
-  "fill-red-400",
+  "fill-blue-100",
+  "fill-blue-200",
+  "fill-blue-300",
   "fill-blue-400",
 ];
 
