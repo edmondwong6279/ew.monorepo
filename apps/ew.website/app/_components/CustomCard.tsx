@@ -13,11 +13,12 @@ export default function CustomCard({
   className?: string;
 }) {
   return (
-    <Card
-      className={`p-0 flex flex-col sm:flex-row ${className ? className : ""}`}
-    >
+    <Card className={"p-0 flex flex-col sm:flex-row " + className}>
       <div
-        className={`p-5 flex flex-col items-start justify-start gap-4 ${image ? "sm:w-2/3" : "w-full"}`}
+        className={
+          "p-5 flex flex-col items-start justify-start gap-4 " +
+          (image ? "sm:w-2/3" : "w-full")
+        }
       >
         {children}
       </div>

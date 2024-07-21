@@ -27,7 +27,7 @@ export default async function BlobPage({
     <>
       <header className="flex justify-between flex-col w-full text-left my-5 gap-4">
         <time
-          className="text-sm text-gray-1 tracking-[0.8rem]"
+          className="text-sm text-gray-1 tracking-xl"
           dateTime={date}
           title={date}
         >
@@ -38,7 +38,21 @@ export default async function BlobPage({
 
       <section className="flex flex-col items-center justify-start gap-8">
         <Card className="flex flex-col gap-2">
-          <ReactMarkdown rehypePlugins={[rehypeRaw]}>{content}</ReactMarkdown>
+          <ReactMarkdown
+            components={{
+              h2(props) {
+                const { node, ...rest } = props;
+                return <h2 className="text-2xl" {...rest} />;
+              },
+              a(props) {
+                const { node, ...rest } = props;
+                return <a className="text-purple-1" {...rest} />;
+              },
+            }}
+            rehypePlugins={[rehypeRaw]}
+          >
+            {content}
+          </ReactMarkdown>
         </Card>
       </section>
     </>

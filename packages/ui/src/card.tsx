@@ -19,7 +19,7 @@ export function Card({
       {...props}
     >
       {children}
-      <div className="ui-absolute ui-left-0 ui-top-0 ui-w-full ui-h-full ui-bg-gradient-to-b ui-from-[#EFDADA] ui-via-[#EDEDED] ui-to-[#878787] ui-opacity-10 -ui-z-10" />
+      <div className="ui-absolute ui-left-0 ui-top-0 ui-w-full ui-h-full ui-bg-gradient-to-b ui-from-pink-1 ui-via-off-white ui-to-gray-1 ui-opacity-10 -ui-z-10" />
     </div>
   );
 }

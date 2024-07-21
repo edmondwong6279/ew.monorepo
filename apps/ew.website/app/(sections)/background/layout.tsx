@@ -8,7 +8,7 @@ export default async function Background({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex min-h-[calc(100svh-13.5rem)] flex-col items-center justify-between w-full animate-slideup opacity-0">
+    <div className="flex min-h-filled flex-col items-center justify-between w-full animate-slideup opacity-0">
       <Suspense
         fallback={
           <div className="w-full mt-20 flex flex-col gap-12">

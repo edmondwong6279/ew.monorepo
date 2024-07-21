@@ -26,7 +26,9 @@ export default async function Footer() {
 
   return (
     <>
-      <footer className={"flex justify-center w-full bg-[#0a0a0a] px-6 py-10"}>
+      <footer
+        className={"flex justify-center w-full bg-basically-black px-6 py-10"}
+      >
         <ol className="max-w-screen-xl w-full flex flex-col sm:flex-row items-center justify-between gap-4">
           <li>
             {/* <p>Ed Wong&apos;s Website 2024</p> */}

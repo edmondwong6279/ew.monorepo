@@ -67,12 +67,12 @@ export default function NavBar({
 
   return (
     <nav
-      className={`opacity-0 sticky flex flex-col items-center top-0 w-full py-5 px-10 z-50 transition-colors animate-slideup ${scrolled || mobileMenuIsOpen ? "bg-[#0a0a0a]" : "bg-transparent"} ${mobileMenuIsOpen ? "h-screen justify-start" : "justify-center"} py-2 px-5 md:py-5 md:px-10`}
+      className={`opacity-0 sticky flex flex-col items-center top-0 w-full py-5 px-10 z-50 transition-colors animate-slideup ${scrolled || mobileMenuIsOpen ? "bg-basically-black" : "bg-transparent"} ${mobileMenuIsOpen ? "h-screen justify-start" : "justify-center"} py-2 px-5 md:py-5 md:px-10`}
     >
       <header className="md:hidden flex justify-between items-center w-full">
         <div className="relative">
           <h1
-            className={`bg-start animate-bg-spin bg-[length:200px_100px] text-2xl tracking-widest transition-all bg-clip-text bg-gradient-to-r from-[#F77373] to-[#A193F5] text-transparent font-bold after:transition-all after:rounded-md after:content-[''] after:absolute after:-bottom-1 after:h-1 after:w-full after:left-0 after:bg-gradient-to-r after:from-[#F77373] after:to-[#A193F5] ${mobileMenuIsOpen ? "opacity-0" : "opacity-100"}`}
+            className={`bg-start animate-bg-spin bg-[length:200px_100px] text-2xl tracking-widest transition-all bg-clip-text bg-gradient-to-r from-pink-2 to-purple-1 text-transparent font-bold after:transition-all after:rounded-md after:content-[''] after:absolute after:-bottom-1 after:h-1 after:w-full after:left-0 after:bg-gradient-to-r after:from-pink-2 after:to-purple-1 ${mobileMenuIsOpen ? "opacity-0" : "opacity-100"}`}
           >
             {activeNavItem?.title || navItems[0].title}
           </h1>
@@ -89,7 +89,7 @@ export default function NavBar({
         {navItems.map(({ link, title }, idx) => (
           <li className="relative" key={`${idx}`}>
             <Link
-              className={`bg-start animate-bg-spin bg-[length:200px_100px] text-2xl tracking-widest transition-all bg-clip-text after:transition-all after:rounded-md after:content-[''] after:absolute after:-bottom-2 after:w-0 after:left-1/2 after:h-1 hover:after:w-full hover:after:left-0 bg-gradient-to-r from-[#F77373] to-[#A193F5] ${(link !== "/" ? path.startsWith(link) : path === link) ? "text-transparent font-bold after:bg-gradient-to-r after:from-[#F77373] after:to-[#A193F5]" : " font-medium text-off-white after:bg-white"}`}
+              className={`bg-start animate-bg-spin bg-[length:200px_100px] text-2xl tracking-widest transition-all bg-clip-text after:transition-all after:rounded-md after:content-[''] after:absolute after:-bottom-2 after:w-0 after:left-1/2 after:h-1 hover:after:w-full hover:after:left-0 bg-gradient-to-r from-pink-2 to-purple-1 ${(link !== "/" ? path.startsWith(link) : path === link) ? "text-transparent font-bold after:bg-gradient-to-r after:from-pink-2 after:to-purple-1" : " font-medium text-off-white after:bg-white"}`}
               href={link}
               onClick={() => setMobileMenuIsOpen(false)}
             >

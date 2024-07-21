@@ -1,58 +1,30 @@
-# Turborepo Tailwind CSS starter
-
-This is an official starter Turborepo.
-
-## Using this example
-
-Run the following command:
-
-```sh
-npx create-turbo@latest -e with-tailwind
-```
-
-## What's inside?
+# Ed Wong's Turporepo
 
 This Turborepo includes the following packages/apps:
 
-### Apps and Packages
+- Packages:
+  - UI library- this will contain the custom react components that I will be able to reuse in other projects. The aim is to make these as generic and reusable as possible.
+  - Eslint config- this will keep linting between the projects consistent. I have kept this to the default Turborepo template.
+  - Tailwind config- for defining and extending custom brand variables and any specific theming that will be used across my projects. Each project will define their own tailwind config that will extend this one.
+  - Typescript config- TSconfig for use across the projects. This is also kept to the default values from the Turborepo template.
+- Applications:
+  - Storybook- presenting the components from the UI library using the Storybook framework.
+  - Website- my personal website and first proper application in this monorepo.
 
-- `docs`: a [Next.js](https://nextjs.org/) app with [Tailwind CSS](https://tailwindcss.com/)
-- `web`: another [Next.js](https://nextjs.org/) app with [Tailwind CSS](https://tailwindcss.com/)
-- `ui`: a stub React component library with [Tailwind CSS](https://tailwindcss.com/) shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+## Running the monorepo
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+Note that the backend requires a CMS that matches [https://github.com/edmondwong6279/ew.website-cms](https://github.com/edmondwong6279/ew.website-cms) and also the correct environment variables too. Without the `.env` set up in the `ew.website` project, the application will not function properly. Provided those values are prepared and ready, then you may proceed with the remaining steps.
 
-### Building packages/ui
+1. Install the packages
 
-This example is set up to produce compiled styles for `ui` components into the `dist` directory. The component `.tsx` files are consumed by the Next.js apps directly using `transpilePackages` in `next.config.js`. This was chosen for several reasons:
-
-- Make sharing one `tailwind.config.js` to apps and packages as easy as possible.
-- Make package compilation simple by only depending on the Next.js Compiler and `tailwindcss`.
-- Ensure Tailwind classes do not overwrite each other. The `ui` package uses a `ui-` prefix for it's classes.
-- Maintain clear package export boundaries.
-
-Another option is to consume `packages/ui` directly from source without building. If using this option, you will need to update the `tailwind.config.js` in your apps to be aware of your package locations, so it can find all usages of the `tailwindcss` class names for CSS compilation.
-
-For example, in [tailwind.config.js](packages/tailwind-config/tailwind.config.js):
-
-```js
-  content: [
-    // app content
-    `src/**/*.{js,ts,jsx,tsx}`,
-    // include packages if not transpiling
-    "../../packages/ui/*.{js,ts,jsx,tsx}",
-  ],
+```
+yarn install
 ```
 
-If you choose this strategy, you can remove the `tailwindcss` and `autoprefixer` dependencies from the `ui` package.
+2. Run dev mode
 
-### Utilities
+```
+yarn dev
+```
 
-This Turborepo has some additional tools already setup for you:
-
-- [Tailwind CSS](https://tailwindcss.com/) for styles
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+3. For the main website application, go to [http://localhost:3000](http://localhost:3000). For storybook, go to [http://localhost:6006](http://localhost:6006).

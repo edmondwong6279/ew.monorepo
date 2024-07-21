@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Home(): JSX.Element {
   return (
-    <div className="relative flex flex-col min-h-[calc(100svh-13.5rem)] justify-center m-4 items-center gap-8">
+    <div className="relative flex flex-col min-h-filled justify-center m-4 items-center gap-8">
       <h1 className="font-bold text-3xl">404</h1>
       <p>
         Sorry but whatever you were looking for doesn&apos;t seem to exist🤷

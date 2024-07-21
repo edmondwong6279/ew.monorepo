@@ -27,7 +27,7 @@ export default async function Blog() {
             <Card key={idx} className="p-10 flex flex-col gap-4">
               <header className="mb-4">
                 <time
-                  className="text-sm text-gray-1 tracking-[0.8rem]"
+                  className="text-sm text-gray-1 tracking-xl"
                   dateTime={blog.attributes.publishedAt}
                   title={blog.attributes.publishedAt}
                 >

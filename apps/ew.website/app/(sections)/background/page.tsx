@@ -28,7 +28,7 @@ export default async function Background() {
                   }
                 >
                   <header className="mb-4">
-                    <h4 className="text-sm text-gray-1 tracking-[0.8rem]">
+                    <h4 className="text-sm text-gray-1 tracking-xl">
                       {item.subtitle}
                     </h4>
                     <h3 className="text-2xl font-medium">{item.title}</h3>

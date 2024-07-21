@@ -131,7 +131,7 @@ export default function Contact() {
             <CTA onClick={closeDialog}>Return</CTA>
           </div>
         )}
-        <div className="absolute left-0 top-0 w-full h-full bg-gradient-to-b from-[#EFDADA] via-[#EDEDED] to-[#878787] opacity-20 -z-10" />
+        <div className="absolute left-0 top-0 w-full h-full bg-gradient-to-b from-pink-1 via-off-white to-gray-1 opacity-20 -z-10" />
       </dialog>
     </>
   );

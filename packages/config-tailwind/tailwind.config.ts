@@ -5,7 +5,6 @@ const config: Omit<Config, "content"> = {
   theme: {
     extend: {
       colors: {
-        // TODO fill in brand colours here
         transparent: "transparent",
         current: "currentColor",
         gray: "#212121",
@@ -19,6 +18,14 @@ const config: Omit<Config, "content"> = {
         "purple-2": "#8379c3",
         "accent-blue": "#2f14d7",
         "accent-red": "#d37373",
+        "accent-blue-faded": "#5943e7",
+        "accent-red-faded": "#ee6565",
+        "background-1": "#9F8383",
+        "background-2": "#706C8A",
+        "basically-black": "#0a0a0a",
+      },
+      minHeight: {
+        filled: "calc(100svh - 13.5rem)",
       },
       fontSize: {
         sm: "0.875rem",
@@ -35,6 +42,10 @@ const config: Omit<Config, "content"> = {
         "3xl": "5rem",
         "4xl": "8rem",
         "5xl": "10rem",
+      },
+      letterSpacing: {
+        xl: "0.8rem",
+        "2xl": "1rem",
       },
       dropShadow: {
         "3xl": "0px 4px 4px rgba(0, 0, 0, 0.25)",

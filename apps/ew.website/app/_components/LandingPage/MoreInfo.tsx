@@ -25,7 +25,7 @@ export default async function MoreInfo(): Promise<JSX.Element> {
               {attributes.description}
             </ReactMarkdown>
             <br />
-            <ul className=" flex-1 items-center grid grid-cols-1 sm:grid-cols-2 gap-4 mx-auto">
+            <ul className="flex-1 items-center grid grid-cols-1 sm:grid-cols-2 gap-4 mx-auto">
               {attributes.contactItems.map((item, idx) => (
                 <li key={idx} className="list-none">
                   <CTA href={item.link} newTab>
